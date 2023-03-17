@@ -68,20 +68,35 @@
  
 
                 <div id="row">
-
- 
-
+<?php
+        include('../class/class_empresa_dal.php');
+        $obj_lista_empresa= new empresa_dal;
+        $result_empresa=$obj_lista_empresa->obtener_lista_empresas();
+/*         echo '<pre>';
+        print_r($result_empresa);
+        echo '</pre>';
+        exit; 
+ */        if ($result_empresa==NULL){
+                echo '<h2>No se encontraron empresas</h2>';
+        }
+        else{
+?>        
                         <div class="col-25">
                                 <label>Empresa:</label>
                         </div>
                         <div class="col-75">    
                                 <select name="f_id_empresa" id="f_id_empresa">
                                     <option value="0">Seleccione</option>
-                                    <option value="1">COCA COLA</option>
-                                    <option value="2">MAGNA</option>
+                                    <?php
+foreach ($result_empresa as $key => $value){									
+?>
+	<option value="<?=$value->getIdEmpresa(); ?>"><?=$value->getNombreEmpresa(); ?></option>
+<?php } ?>							
+
+
                                 </select>    
                         </div>
-                    
+<?php } ?>                    
                 </div>                                                                
 
  
