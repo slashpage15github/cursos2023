@@ -7,8 +7,8 @@
 //include_once "inclusiones/js_incluidos.php"; 
 ?>
 <!-- forma específica pero solo incluimos lo necesario para el backend --> 
-<link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
-<script src="js/sweetalert2.all.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../css/sweetalert2.min.css">
+<script src="../js/sweetalert2.all.min.js" type="text/javascript"></script>
 </head>
 </html>
 <?php
@@ -76,8 +76,8 @@ $cur=isset($_POST["f_id_curso"]) ? $cur=strtoupper($_POST["f_id_curso"]) : $cur=
 
 	///logica de insercion
 	if (!$errores){
-			include("class/class_aspirante_dal.php");
-			include("class/class_aspirantes_cursos_dal.php");
+			include("../class/class_aspirante_dal.php");
+			include("../class/class_aspirantes_cursos_dal.php");
 			$metodos_asp=new aspirantes_dal;
 			$metodos_asp_cur= new AspiranteCurso_dal;
 				
