@@ -4,7 +4,10 @@
 <?php 
 //forma fácil reutilizando estrategoa de inclusión, pero cargas cosas de más 
 //include_once "inclusiones/css_y_favicon.php";
-//include_once "inclusiones/js_incluidos.php"; 
+//include_once "inclusiones/js_incluidos.php";
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); 
 ?>
 <!-- forma específica pero solo incluimos lo necesario para el backend --> 
 <link rel="stylesheet" type="text/css" href="../css/sweetalert2.min.css">
@@ -22,7 +25,7 @@ $tel=isset($_POST["f_telefono"]) ? $tel=strtoupper($_POST["f_telefono"]) : $tel=
 $ema=isset($_POST["f_email"]) ? $ema=strtoupper($_POST["f_email"]) : $ema=null;
 $cur=isset($_POST["f_id_curso"]) ? $cur=strtoupper($_POST["f_id_curso"]) : $cur=null;
 	
-	require_once 'php/funciones_php.php';
+	require_once '../php/funciones_php.php';
 	$errores=array();
 
 	if (!validaRequerido($rfc)){
