@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php include_once "inclusiones/meta_tags.php"; ?> 	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 	
 	<title>Registro de aspirantes </title>
-	<?php include_once "inclusiones/css_y_favicon.php"; ?>
+	<link rel="shorcut icon" type="image/png" href="images/logo_favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
 	<link rel="stylesheet" href="css/index.css">
 </head>
 <body id="LoginForm">
 
-<!-- Menu principal -->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-12">
-	<?php 
-		include_once "inclusiones/menu_horizontal_superior.php";
-	?>
-	</div>
-	</div>
-</div>
 
 <div class="container" style="margin-top:70px;">
 
@@ -27,7 +20,7 @@
    <h2>Admin Login</h2>
    <p>Please enter your user and password</p>
    </div>
-    <form id="Login" method="post" action="#" onsubmit="return valida_login();">
+    <form id="Login" method="post" action="views/aspirante.php" onsubmit="return valida_login();">
 
         <div class="form-group">
 
@@ -56,6 +49,10 @@
 
 
 
-	<?php include_once "inclusiones/js_incluidos.php"; ?>
+<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/validations.js"></script>
+<script src="js/sweetalert2.all.min.js"></script>
 </body>
 </html>

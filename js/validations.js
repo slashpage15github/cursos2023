@@ -101,3 +101,36 @@ let mensaje = (tipo,titulo,texto,liga) =>{
 let getTextInputById = (id) => {
   return document.getElementById(id).value.trim();
 }
+
+function valida_login(){
+	var js_us=document.getElementById("f_user").value.trim();
+	var js_pw=document.getElementById("f_pwd").value.trim();
+
+	//alert(js_us+' -  '+js_pw);
+	if (js_us.length==0 || js_pw.length==0){
+		Swal.fire({
+  			type: 'error',
+  			title: 'Usuario y password',
+  			text: 'El usuario y password no debe ir vacios'
+			}); 
+		return  false;
+	}
+	else if(js_us.length<8 || js_pw.length<8){
+		Swal.fire({
+  			typen: 'error',
+  			title: 'Usuario y password',
+  			text: 'El usuario y password deben contener al menos 8 caracteres'
+			}); 
+		return  false;
+
+	}
+	else if (!pwdpattern.test(js_pw)){
+			Swal.fire({
+  			type: 'error',
+  			title: 'Password Inseguro',
+            html: 'Condiciones: <br>1] Min 1 special character.<br>2] Min 1 number.<br>3] Min 8 characters or More'
+			});	        
+        return false;
+    }
+
+}

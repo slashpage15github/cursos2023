@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include_once "inclusiones/meta_tags.php"; ?>
+    <?php include_once "../inclusiones/meta_tags.php"; ?>
     <title>Catálogo de Cursos</title>
-    <?php include_once "inclusiones/css_y_favicon.php"; ?>
+    <?php include_once "../inclusiones/css_y_favicon.php"; ?>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
         <?php
-        include_once "inclusiones/menu_horizontal_superior.php";
+        include_once "../inclusiones/menu_horizontal_superior.php";
         ?>
     </div>
 </div>
@@ -22,7 +22,7 @@
 </div>
 
 <?php  
-include("class/class_catalogo_curso_dal.php");
+include("../class/class_catalogo_curso_dal.php");
 $obj_dato_catalogo_cursos=new catalogo_curso_dal;
 
 $result_dato_catalogo_cursos=$obj_dato_catalogo_cursos->obtener_lista_cursos();
@@ -64,17 +64,17 @@ $result_dato_catalogo_cursos=$obj_dato_catalogo_cursos->obtener_lista_cursos();
     						foreach ($result_dato_catalogo_cursos as $key => $value) {
 		?>
     						<tr>
-								<td><?=$value->getIDCURSO();?></td>
-								<td><?=$value->getNOMBRECURSO();?></td>
+								<td><?=$value->getID_CURSO();?></td>
+								<td><?=$value->getNOMBRE_CURSO();?></td>
 <td>
-<button class='update btn btn-success btn-sm' id='update_<?= $value->getIDCURSO() ?>' data-id='<?= $value->getIDCURSO() ?>' >Actualizar</button>
+<button class='update btn btn-success btn-sm' id='update_<?= $value->getID_CURSO() ?>' data-id='<?= $value->getNOMBRE_CURSO() ?>' >Actualizar</button>
 </td>
 
 <td>
-<button class='ver btn btn-warning btn-sm' id='ver_<?= $value->getIDCURSO() ?>' data-id='<?= $value->getIDCURSO() ?>' >Ver</button></td>
+<button class='ver btn btn-warning btn-sm' id='ver_<?= $value->getID_CURSO() ?>' data-id='<?= $value->getID_CURSO() ?>' >Ver</button></td>
 
 <td>
-<button class='delete btn btn-danger btn-sm' id='del_<?= $value->getIDCURSO() ?>' data-id='<?= $value->getIDCURSO() ?>' >Eliminar</button>
+<button class='delete btn btn-danger btn-sm' id='del_<?= $value->getID_CURSO() ?>' data-id='<?= $value->getID_CURSO() ?>' >Eliminar</button>
 </td>
 
     						</tr>
@@ -93,7 +93,7 @@ $result_dato_catalogo_cursos=$obj_dato_catalogo_cursos->obtener_lista_cursos();
 
 ?>
 
-<?php include_once "inclusiones/js_incluidos.php"; ?>
+<?php include_once "../inclusiones/js_incluidos.php"; ?>
 
 </div><!-- end container -->  
 
