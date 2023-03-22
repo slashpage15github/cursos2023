@@ -1,7 +1,7 @@
 <?php
 if (!empty($_POST)){
-	require_once 'php/funciones_php.php';
-	include("class/class_catalogo_curso_dal.php");
+	require_once '../php/funciones_php.php';
+	include("../class/class_catalogo_curso_dal.php");
 	$metodos_cursos=new catalogo_curso_dal;
 
 	if (isset($_POST['curso_id'])){
@@ -39,7 +39,7 @@ if (!empty($_POST)){
 				}
 
 			}else{
-				if($metodos_cursos->actualiza_curso($obj_curso)=="1"){
+				if($metodos_cursos->actualizar_curso($obj_curso)=="1"){
 					echo 'ok';
 				}
 				else{

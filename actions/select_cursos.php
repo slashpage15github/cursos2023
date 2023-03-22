@@ -1,5 +1,5 @@
 <?php
-include("class/class_catalogo_curso_dal.php");
+include("../class/class_catalogo_curso_dal.php");
 if(isset($_POST['id'])){
    $id=  $_POST['id'];
    //echo $id;
@@ -8,8 +8,8 @@ if(isset($_POST['id'])){
       $result_cursos=$metodos_cursos->datos_por_id($id);
 
       
-        $idCurso=$result_cursos->getIDCURSO();
-        $nombreCurso=utf8_encode($result_cursos->getNOMBRECURSO());
+        $idCurso=$result_cursos->getID_CURSO();
+        $nombreCurso=utf8_encode($result_cursos->getNOMBRE_CURSO());
       
 
 $output .= '  

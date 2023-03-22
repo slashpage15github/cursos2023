@@ -67,7 +67,7 @@ $result_dato_catalogo_cursos=$obj_dato_catalogo_cursos->obtener_lista_cursos();
 								<td><?=$value->getID_CURSO();?></td>
 								<td><?=$value->getNOMBRE_CURSO();?></td>
 <td>
-<button class='update btn btn-success btn-sm' id='update_<?= $value->getID_CURSO() ?>' data-id='<?= $value->getNOMBRE_CURSO() ?>' >Actualizar</button>
+<button class='update btn btn-success btn-sm' id='update_<?= $value->getID_CURSO() ?>' data-id='<?= $value->getID_CURSO() ?>' >Actualizar</button>
 </td>
 
 <td>
@@ -164,7 +164,7 @@ $('#add').click(function(){
            else  
            {  
                 $.ajax({  
-                     url:"inserta_actualiza_cursos.php",  
+                     url:"../actions/inserta_actualiza_cursos.php",  
                      method:"POST",  
                      data:$('#insert_form').serialize(),  
                      beforeSend:function(){ 
@@ -216,7 +216,7 @@ $('#add').click(function(){
        if(result){
          // AJAX Request
          $.ajax({
-           url: 'delete_cursos.php',
+           url: '../actions/delete_cursos.php',
            type: 'POST',
            data: { id:deleteid },
            success: function(response){
@@ -247,7 +247,7 @@ $('#lista_cursos tbody').on('click', '.ver', function() {
           if(curso_id != '')  
            {  
                 $.ajax({  
-                     url:'select_cursos.php',  
+                     url:'../actions/select_cursos.php',  
                      method:'POST',  
                      data:{id:curso_id},  
                      success:function(response){
@@ -270,8 +270,11 @@ $('#lista_cursos tbody').on('click', '.ver', function() {
 $('#lista_cursos tbody').on('click', '.update', function() {
     $("h4.modal-title").text("Modificación de Curso");
     var curso_id = $(this).data('id');
+
+    
+    //alert(curso_id);
                $.ajax({  
-                url:"fetch_curso.php",  
+                url:"../actions/fetch_curso.php",  
                 method:"POST",  
                 data:{curso_id:curso_id},  
                 dataType:"json",  
